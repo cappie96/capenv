@@ -2,4 +2,4 @@
 
 set -e
 
-cp -R $HOME/capenv/configs/* $HOME/.config
+cp -R ~/capenv/configs/* ~/.config/
