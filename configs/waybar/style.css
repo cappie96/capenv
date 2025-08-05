@@ -1,0 +1,66 @@
+@define-color waybar-bg #242f40; /* gunmetal */
+@define-color arch #bfc3ba;
+@define-color text-color #a4ac96; /* ash grey */
+
+* {
+    font-family: "RobotMono Nerd Font Mono";
+    font-size: 12px;
+    min-height: 0;
+    /* color: @text-color; */
+    border: none;
+}
+
+window#waybar {
+    background: @waybar-bg;
+    border-radius: 8px;
+}
+
+.modules-left {
+    margin-left: 10px;
+}
+
+.modules-right {
+    margin-right: 10px;
+}
+
+#custom-arch {
+    color: @arch;
+}
+
+#workspaces button {
+    all: initial;
+    padding: 0 6px;
+    margin: 0 1.5px;
+    min-width: 9px;
+}
+
+#workspaces button.active {
+    background: #7c9082;
+    border-radius: 3px;
+    color: #000f08;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#tray,
+#cpu,
+#network,
+#bluetooth,
+#pulseaudio,
+#clock,
+#custom-notification,
+#custom-power {
+    color: @text-color;
+    min-width: 12px;
+    margin: 0 5px;
+}
+
+#clock {
+    /* color: #f46036; */
+    color: #9dbbae; /* cambridge blue */
+    font-weight: bold;
+}
+
+tooltip {
+    padding: 2px;
+}

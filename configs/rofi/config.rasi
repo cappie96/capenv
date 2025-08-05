@@ -1,0 +1,61 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    display-drun: "";
+    display-run:  "";
+    display-ssh: "";
+    display-filebrowser: "";
+    display-window: "";
+    drun-display-format: "{name}";
+    window-format: "{w}{t}";
+    font: "iMWritingMono Nerd Font Mono 11";
+}
+
+window {
+    width: 800px;
+    border-radius: 10px;
+}
+
+mainbox {
+    spacing: 0px;
+    margin: 0px;
+    children: ["listview", "inputbar", "mode-switcher"];
+}
+
+listview {
+    border: none;
+    spacing: 5px;
+    lines: 10;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 10px;
+    children: ["textbox-prompt-colon", "entry"];
+}
+
+textbox-prompt-colon {
+    str: "";
+}
+
+entry {
+    placeholder: "Search...";
+}
+
+element {
+    margin: 3px;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+element-icon {
+    size: 20px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+}
