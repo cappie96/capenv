@@ -2,7 +2,7 @@
 
 paru -S --noconfirm \
     hyprland hyprshot hyprlock hypridle hyprland-qtutils hyprsysteminfo hyprpolkitagent hyprlang \
-    walker-bin waybar mako \
+    rofi waybar swaync \
     xdg-desktop-portal-hyprland
 
 
