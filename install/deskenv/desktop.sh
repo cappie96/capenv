@@ -3,4 +3,5 @@
 paru -S --noconfirm \
     brightnessctl playerctl pamixer wireplumber \
     nautilus \
-    zen-browser-bin
+    zen-browser-bin \
+    thunderbird
