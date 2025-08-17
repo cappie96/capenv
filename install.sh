@@ -8,7 +8,7 @@ INSTALL_DIR="$HOME/capenv/install"
 echo -e "\nstarting config installer\n"
 source $INSTALL_DIR/config/config.sh
 source $INSTALL_DIR/config/keyboard-layout.sh
-# source $INSTALL_DIR/config/amd.sh
+source $INSTALL_DIR/config/amd.sh
 
 echo -e "\nstarting development installer\n"
 source $INSTALL_DIR/development/nvim.sh
