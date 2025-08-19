@@ -15,11 +15,9 @@
 --}
 
 return {
-  "thesimonho/kanagawa-paper.nvim",
-  lazy = false,
-  priority = 1000,
+  "rebelot/kanagawa.nvim",
   init = function()
-    vim.cmd.colorscheme("kanagawa-paper-ink")
+    vim.cmd("colorscheme kanagawa-lotus")
   end,
-  opts = {...},
 }
+
