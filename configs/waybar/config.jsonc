@@ -9,19 +9,22 @@
 
     "modules-left": [
         "custom/arch",
-        "hyprland/workspaces",
+        "clock",
+        "disk",
+        "memory",
+        "cpu",
     ],
 
     "modules-center": [
-        "clock"
+        "hyprland/workspaces"
     ],
 
     "modules-right": [
-        "group/tray-expander",
+        "hyprland/window",
+        "group/blight",
         "bluetooth",
         "network",
         "pulseaudio",
-        "cpu",
         "custom/notification",
         "custom/power"
     ],
@@ -49,35 +52,23 @@
         }
     },
 
-    "tray": {
-        "icon-size": 14,
-        "spacing": 5
-    },
-
     "hyprland/window": {
-        "format": "{initialTitle}",
+        "format": "( {class} )",
     },
 
     "clock": {
         "timezone": "Europe/London",
-        "format": "{:%I:%M %a %d}"
+        "format": "{:%H:%M %a %d}"
     },
 
-    "group/tray-expander": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 600,
-            "children-class": "tray-group-item"
-        },
-        "modules": [
-            "custom/expand-icon",
-            "tray"
-        ]
+    "disk": {
+        "interval": 30,
+        "format": "  {percentage_used}%",
+        "path": "/"
     },
 
-    "tray": {
-        "icon-size": 12,
-        "spacing": 12
+    "memory": {
+        "format": " {percentage}%"
     },
 
     "pulseaudio": {
@@ -140,6 +131,45 @@
         "format": "",
         "tooltip": false,
         "on-click": "wlogout -b 2"
+    },
+
+    "group/blight": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ]
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "<span font='12'>{icon}</span>",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+        ],
+        "on-scroll-down": "light -U 10",
+        "on-scroll-up": "light -A 10",
+        "smooth-scrolling-threshold": 1
+    },
+
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
     },
 
 }

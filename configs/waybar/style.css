@@ -4,23 +4,35 @@
 
 * {
     font-family: "RobotMono Nerd Font Mono";
-    font-size: 12px;
-    min-height: 0;
+    font-size: 14px;
+    min-height: 15px;
     /* color: @text-color; */
     border: none;
 }
 
 window#waybar {
-    background: @waybar-bg;
-    border-radius: 8px;
+    background: transparent;
 }
 
 .modules-left {
-    margin-left: 10px;
+    padding: 0 10px;
+    margin: 4px;
+    border: 1px solid @waybar-bg;
+    border-radius: 10px;
+}
+
+.modules-center {
+    padding: 0 10px;
+    margin: 4px;
+    border: 1px solid @waybar-bg;
+    border-radius: 10px;
 }
 
 .modules-right {
-    margin-right: 10px;
+    padding: 0 10px;
+    margin: 4px;
+    border: 1px solid @waybar-bg;
+    border-radius: 10px;
 }
 
 #custom-arch {
@@ -42,8 +54,11 @@ window#waybar {
     transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
-#tray,
+#disk,
+#memory,
 #cpu,
+#backlight,
+#window,
 #network,
 #bluetooth,
 #pulseaudio,
@@ -51,14 +66,29 @@ window#waybar {
 #custom-notification,
 #custom-power {
     color: @text-color;
-    min-width: 12px;
-    margin: 0 5px;
+    padding: 0 10px;
 }
 
 #clock {
-    /* color: #f46036; */
-    color: #9dbbae; /* cambridge blue */
+    /* color: #9dbbae; cambridge blue */
+    color: #81a1c1;
     font-weight: bold;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  margin-top: -3px;
+  min-width: 90px;
+  min-height: 10px;
+  margin-bottom: -4px;
+  border-radius: 8px;
+  background: #a6a69c;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  border-radius: 8px;
+  background-color: #88c0d0;
 }
 
 tooltip {
