@@ -1,6 +1,6 @@
 #!/bin/bash
 
-paru -S --noconfirm linux-headers amdgpu radeon mesa
+paru -S --noconfirm linux-headers mesa
 
 MKINITCPIO_CONF="/etc/mkinitcpio.conf"
 AMD_MODULES="amdgpu radeon"

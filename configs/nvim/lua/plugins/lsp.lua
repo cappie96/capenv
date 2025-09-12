@@ -113,10 +113,10 @@ return {
         filetypes = { "bash", "sh" }
       },
       -- clangd = {},
-      gopls = {
-         cmd = { "gopls" },
-         filetypes = { "go", "gomod", "gowork", "gotmpl" }
-      },
+      -- gopls = {
+      --    cmd = { "gopls" },
+      --    filetypes = { "go", "gomod", "gowork", "gotmpl" }
+      -- },
       pyright = {
         cmd = { "pyright-langserver", "--stdio" },
         filetypes = { "python" }
@@ -138,6 +138,7 @@ return {
           },
         },
       },
+      yamlls = {},
     }
 
     -- Ensure the servers and tools above are installed
