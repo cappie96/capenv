@@ -13,6 +13,8 @@ vim.opt.relativenumber = true
 -- enable the mouse
 vim.opt.mouse = 'a'
 
+vim.opt.showmode = false
+
 --[[
 sync the clipboard between the OS and NVIM
 schedule this after UIEnter as it can increase startup time
@@ -28,6 +30,14 @@ vim.opt.shiftwidth = 4
 -- insert spaces instead of tab characters
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
+
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
 
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()

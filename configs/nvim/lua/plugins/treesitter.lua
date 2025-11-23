@@ -5,7 +5,7 @@ return {
   build = ":TSUpdate",
   main = "nvim-treesitter.configs",
   opts = {
-    ensure_installed = { "bash", "c", "go", "lua", "markdown", "python", "yaml" },
+    ensure_installed = { "bash", "c", "go", "lua", "markdown", "python", "rust", "yaml" },
     auto_install = true,
     highlight = {
       enable = true,
