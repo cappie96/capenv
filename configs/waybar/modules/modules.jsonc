@@ -1,0 +1,120 @@
+{
+    "custom/arch": {
+        "format": " ",
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{name}",
+        //"persistent-only": true
+    },
+
+    "hyprland/window": {
+        "format": "{initialTitle}",
+        "rewrite": {
+            "Zen Browser": "[ Zen Browser ]",
+            "wezterm": "[ Wezterm ]"
+            //"(.*) — Mozilla Firefox": "🌎 $1"
+        },
+        "separate-outputs": true
+    },
+
+    "tray": {
+        "icon-size": 12,
+        "spacing": 10
+    },
+
+    "pulseaudio": {
+        "format": "<span color=\"#c6a0f6\">{icon}</span> {volume}%",
+        "format-bluetooth": "<span color=\"#c6a0f6\">󰂰 </span>{volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "bluetooth": "󰥰 ",
+            "headphone": " ",
+            "default": [
+                " ",
+                " "
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+    },
+
+    "group/sys-mon": {
+        "modules": [
+            "disk",
+            "memory",
+            "cpu"
+        ],
+        "orientation": "horizontal"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "<span color=\"#f9e2af\"> </span> {specific_used:0.2f} GB",
+        //"path": "/",
+        "unit": "GB"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "<span color=\"#89b4fa\"> </span> {used} GiB",
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "<span color=\"#f38ba8\"></span>  {}%",
+        "max-length": 10
+    },
+
+    "group/net-info": {
+        "drawer": {
+            "children-class": "network-info",
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "network#icon",
+            "network#name"
+        ],
+        "orientation": "horizontal"
+    },
+    "network#icon": {
+        "format": "{icon}",
+        "format-disabled": "󰖪",
+        "format-disconnected": "<span color=\"#7aa2f7\">⚠ </span>",
+        "format-ethernet": "<span color=\"#7aa2f7\"> </span>",
+        "format-icons": [
+            "<span color=\"#a6e3a1\"> </span>"
+        ],
+        "format-linked": "<span color=\"#a6e3a1\"> </span>",
+        "format-wifi": "{icon}",
+        "interval": 30,
+        "on-click": "kitty -e 'nmtui'",
+        "on-click-right": "rfkill toggle wifi",
+        "tooltip": true,
+        "tooltip-format": "interface:\t{ifname}\n\nconnected to {essid} at {signalStrength}% strength",
+        "tooltip-format-disconnected": "interface: {ifname}\nconnected to {essid}\nat {signalStrength}% strength"
+    },
+    "network#name": {
+        "on-click-right": "kitty -e 'nmtui'",
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": " Disconnected",
+        "format-alt": " {ipaddr}"
+    },
+
+    "clock": {
+        "format": "{:%OI:%OM %p}",
+        "format-alt": "{:%A, %b %e}",
+        "interval": 60
+    },
+
+    "custom/power": {
+		"format": "",
+		"on-click": "wlogout -b 5",
+		"tooltip": false
+	},
+}

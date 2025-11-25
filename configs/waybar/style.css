@@ -1,96 +1,98 @@
-@define-color waybar-bg #242f40; /* gunmetal */
-@define-color arch #bfc3ba;
-@define-color text-color #a4ac96; /* ash grey */
+@import "colors/current-theme.css";
 
 * {
-    font-family: "RobotMono Nerd Font Mono";
-    font-size: 14px;
-    min-height: 15px;
-    /* color: @text-color; */
-    border: none;
+    font-family: "RobotoMono Nerd Font Mono";
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0;
+    border-radius: 8px;
 }
 
 window#waybar {
-    background: transparent;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
 }
 
-.modules-left {
-    padding: 0 10px;
-    margin: 4px;
-    border: 1px solid @waybar-bg;
-    border-radius: 10px;
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
-.modules-center {
-    padding: 0 10px;
-    margin: 4px;
-    border: 1px solid @waybar-bg;
-    border-radius: 10px;
-}
-
-.modules-right {
-    padding: 0 10px;
-    margin: 4px;
-    border: 1px solid @waybar-bg;
-    border-radius: 10px;
+window > box {
+    /* background-color: @backgrounddark; */
+    padding: 0px 5px;
+    margin: 0px 50px 0px 50px;
 }
 
 #custom-arch {
-    color: @arch;
+    margin: 3px 2px;
+    font-size: 14px;
+    color: @color12;
+    padding: 0px 5px 0px 10px;
+    border-radius: 10px;
+}
+
+#workspaces {
+    border-radius: 10px;
+    margin: 3px 2px;
+    padding: 0px 10px;
 }
 
 #workspaces button {
-    all: initial;
-    padding: 0 6px;
-    margin: 0 1.5px;
-    min-width: 9px;
+    color: @color11;
+    padding: 0px 5px;
 }
 
 #workspaces button.active {
-    background: #7c9082;
-    border-radius: 3px;
-    color: #000f08;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+    color: @color14;
 }
 
-#disk,
-#memory,
+#workspaces button.empty {
+    color: @textlight;
+}
+
+#workspaces button:hover {
+    color: @color7;
+    background-color: @background;
+}
+
+#tray {
+    margin: 3px 2px;
+    padding: 0px 10px;
+}
+
 #cpu,
-#backlight,
-#window,
-#network,
-#bluetooth,
+#memory,
+#disk,
 #pulseaudio,
+#workspaces,
 #clock,
-#custom-notification,
+#sys-mon,
+#net-info, 
+#network-info,
+#window,
+#custom-arch,
 #custom-power {
-    color: @text-color;
-    padding: 0 10px;
+    background-color: @background;
 }
 
-#clock {
-    /* color: #9dbbae; cambridge blue */
-    color: #81a1c1;
-    font-weight: bold;
+#cpu, #memory, #disk, #sys-mon, #pulseaudio, #clock, #window {
+    color: @text;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 3px 2px;
 }
 
-#backlight-slider trough,
-#pulseaudio-slider trough {
-  margin-top: -3px;
-  min-width: 90px;
-  min-height: 10px;
-  margin-bottom: -4px;
-  border-radius: 8px;
-  background: #a6a69c;
+#net-info, #network-info {
+    color: @text;
+    border-radius: 10px;
+    padding: 0px 7px 0px 15px;
+    margin: 3px 2px;
 }
 
-#backlight-slider highlight,
-#pulseaudio-slider highlight {
-  border-radius: 8px;
-  background-color: #88c0d0;
+#custom-power {
+    color: @color5;
+    padding: 0px 10px;
+    margin: 3px 2px;
 }
 
-tooltip {
-    padding: 2px;
-}
