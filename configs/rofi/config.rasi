@@ -1,61 +1,134 @@
+/*****----- Configuration -----*****/
 configuration {
-    modi: "drun,run";
+	modi: "drun,run,filebrowser,window";
     show-icons: true;
-    display-drun: "";
-    display-run:  "";
-    display-ssh: "";
-    display-filebrowser: "";
-    display-window: "";
-    drun-display-format: "{name}";
-    window-format: "{w}{t}";
-    font: "iMWritingMono Nerd Font Mono 11";
+    display-drun: "APPS";
+    display-run: "RUN";
+    display-filebrowser: "FILES";
+    display-window: "WINDOW";
+    display-ssh: "SSH";
+	drun-display-format: "{name}";
+	window-format: "{w} · {c} · {t}";
+}
+
+* {
+    font: "JetBrains Mono Nerd Font 10";
+    background: #15161EFF;
+    background-alt: #1A1B26FF;
+    foreground: #C0CAF5FF;
+    selected: #33467CFF;
+    active: #414868FF;
 }
 
 window {
-    width: 800px;
-    border-radius: 10px;
+    width: 900px;
+    border-radius: 20px;
+    background-color: @background;
 }
 
 mainbox {
-    spacing: 0px;
-    margin: 0px;
-    children: ["listview", "inputbar", "mode-switcher"];
-}
-
-listview {
-    border: none;
-    spacing: 5px;
-    lines: 10;
-    scrollbar: false;
+    spacing: 10px;
+    padding: 20px;
+    border: 0px solid;
+    border-color: @selected;
     background-color: transparent;
+    children: [ "inputbar", "mode-switcher", "message", "listview" ];
 }
 
 inputbar {
     spacing: 10px;
-    padding: 10px;
-    children: ["textbox-prompt-colon", "entry"];
+    text-color: @foreground;
+    background-color: transparent;
+    children: [ "textbox-prompt-colon", "entry" ];
+}
+
+prompt {
+    background-color: inherit;
+    text-color: inherit;
 }
 
 textbox-prompt-colon {
-    str: "";
+    padding: 5px 0px;
+    str: " ";
 }
 
 entry {
+    padding: 5px 0px;
+    background-color: inherit;
+    text-color: inherit;
+    cursor: text;
     placeholder: "Search...";
 }
 
-element {
-    margin: 3px;
-    padding: 3px;
-    border-radius: 10px;
+listview {
+    columns: 1;
+    lines: 8;
+    scrollbar: false;
+    border: 0px solid;
     background-color: transparent;
+    text-color: @foreground;
+}
+
+element {
+    spacing: 10px;
+    border: 0px solid;
+    border-radius: 8px;
+    border-color: @selected;
+    background-color: transparent;
+    text-color: @selected;
+    cursor: pointer;
+}
+
+element.normal.active {
+    background-color: @active;
+    text-color: @background;
+}
+
+element.alternate.normal {
+    background-color: inherit;
 }
 
 element-icon {
-    size: 20px;
     background-color: transparent;
+    size: 24px;
 }
 
 element-text {
     background-color: transparent;
+    vertical-align: 0.5;
 }
+
+mode-switcher {
+    spacing: 10px;
+    expand: false;
+    border: 0px solid;
+    background-color: transparent;
+    text-color: @selected;
+}
+
+button {
+    padding: 12px;
+    border: 0px solid;
+    border-radius: 8px;
+    background-color: @background-alt;
+    text-color: inherit;
+    cursor: pointer;
+}
+
+button selected {
+    background-color: @selected;
+    text-color: @background;
+}
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+
+
+
